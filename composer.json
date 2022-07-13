@@ -12,6 +12,7 @@
             "email": "43637154+WouterLagerwerf@users.noreply.github.com"
         }
     ],
+    "license": "MIT",
     "require": {
         "livewire/livewire": "^2.9"
     }
