@@ -1,4 +1,4 @@
-walleta<?php
+<?php
 
 namespace Walletapp\Components;
 
