@@ -58,7 +58,7 @@
         @endif
     </div>
     <div x-cloak x-show="showLoaders">
-        @livewire('components.loader')
+        @livewire('walletapp::loader')
         <span style="left:37.5%;" class="absolute top-32 text-gray-500 text-sm">We are looking for your request!</span>
     </div>
 </div>

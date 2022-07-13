@@ -1,6 +1,6 @@
 <div class="col-span-full" x-data="{openShopOrder: false}">
     <div x-show="! openShopOrder">
-        @livewire('components.model-select', [
+        @livewire('walletapp::model.select', [
             'type' => 'brands',
             'model' => 'brands',
             'id' => 'brands',

@@ -128,7 +128,7 @@
                                     @if($preview)
                                         <div wire:ignore style="width:500px;">
                                             @if ($preview_component)
-                                                @livewire('components.preview', ['mode' => $preview_component])
+                                                @livewire('walletapp::preview', ['mode' => $preview_component])
                                             @else
                                                 Define the preview_component to use this feature
                                             @endif
