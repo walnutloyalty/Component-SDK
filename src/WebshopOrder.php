@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Components;
+namespace Walletapp\Components;
 
 use Livewire\Component;
 use Facades\App\Http\Repositories\Brand;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Components;
+namespace Walletapp\Components;
 
 use App\Imports\UserImport;
 use Livewire\Component;
