@@ -10,7 +10,6 @@ class Breadcrumbs extends Component
     public $title = [];
 
     public $items = [
-
     ];
 
     public $listeners = [
