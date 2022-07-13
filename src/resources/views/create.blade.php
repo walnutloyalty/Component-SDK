@@ -96,7 +96,7 @@
                                     <div class="relative w-full mr-4 grid gap-4 @if ($preview) pr-4 border-r border-gray-200 grid-cols-8 @else grid-cols-12 @endif ">
                                         @foreach($tab['inputs'] ?? [] as $input)
                                             @if(isset($input['component']))
-                                            @include('walletapp::includes.'.$input['component'], [
+                                            @include('walletapp::includes.inputs.'.$input['component'], [
                                                 'type' => isset($input['type']) ? $input['type']: null,
                                                 'allow_images' => isset($input['allow_images']) ? $input['allow_images']: null,
                                                 'placeholder' => isset($input['placeholder']) ? $input['placeholder']: null,
