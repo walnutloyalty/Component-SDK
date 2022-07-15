@@ -34,7 +34,8 @@ class Breadcrumbs extends Component
 
     public function prepend()
     {
-
+        $count = count($this->items);
+        unset($this->items[$count - 1]);
     }
 
     public function mount()

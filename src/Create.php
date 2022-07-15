@@ -69,7 +69,6 @@ class Create extends Component
         'product' => ['GET', '/api/product/inspect/', true],
         'storecard' => ['GET', '/api/storecard/inspect/', true],
         'offer' => ['GET', '/api/online/inspect/', true]
-
     ];
 
     public function edit($data)

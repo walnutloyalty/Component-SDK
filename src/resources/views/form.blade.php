@@ -15,7 +15,7 @@
                 @foreach($inputs ?? [] as $input)
                     @if(isset($input['component']))
 
-                    @include('walletapp::includes.'.$input['component'], [
+                    @include('walletapp::includes.inputs.'.$input['component'], [
                         'type' => isset($input['type']) ? $input['type']: null,
                         'allow_images' => isset($input['allow_images']) ? $input['allow_images']: null,
                         'placeholder' => isset($input['placeholder']) ? $input['placeholder']: null,
