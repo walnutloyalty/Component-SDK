@@ -1,3 +1,3 @@
 ## Installation
 
-The docs for this package can be found [here](docs.walletapp.co).
+The docs for this package can be found [here](https://docs.walletapp.co).
