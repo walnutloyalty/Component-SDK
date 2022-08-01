@@ -44,7 +44,7 @@ class ComponentsProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/resources/' => resource_path() . '/resources/walletapp'
+            __DIR__.'/resources/views' => resource_path() . '/views/walletapp'
         ], 'resources');
 
         $this->publishes([
