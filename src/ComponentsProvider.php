@@ -33,7 +33,11 @@ class ComponentsProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'walletapp');
+        if (! env('COMPONENTS_DEBUG')) {
+            $this->loadViewsFrom(__DIR__.'/resources/views', 'walletapp');
+        } else {
+            $this->loadViewsFrom(__DIR__.'/resources/views/walletapp', 'walletapp');
+        }
     }
 
     /**
