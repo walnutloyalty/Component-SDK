@@ -1,6 +1,6 @@
 <?php
 
-namespace Walletapp\Components;
+namespace Walletapp\Components\Components;
 
 use Livewire\Component;
 use Exception;

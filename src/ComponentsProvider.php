@@ -2,23 +2,23 @@
 
 namespace Walletapp\Components;
 
-use Walletapp\Components\Breadcrumbs;
-use Walletapp\Components\Create;
-use Walletapp\Components\Csv;
-use Walletapp\Components\Feed;
-use Walletapp\Components\Form;
-use Walletapp\Components\Graph;
-use Walletapp\Components\Loader;
-use Walletapp\Components\ModelSelect;
-use Walletapp\Components\Notification;
-use Walletapp\Components\Preview;
-use Walletapp\Components\Search\Action;
-use Walletapp\Components\Search\Input;
-use Walletapp\Components\Search\Recent;
-use Walletapp\Components\Search\Result;
-use Walletapp\Components\SingleList;
-use Walletapp\Components\Stat;
-use Walletapp\Components\WebshopOrder;
+use Walletapp\Components\Components\Breadcrumbs;
+use Walletapp\Components\Components\Create;
+use Walletapp\Components\Components\Csv;
+use Walletapp\Components\Components\Feed;
+use Walletapp\Components\Components\Form;
+use Walletapp\Components\Components\Graph;
+use Walletapp\Components\Components\Loader;
+use Walletapp\Components\Components\ModelSelect;
+use Walletapp\Components\Components\Notification;
+use Walletapp\Components\Components\Preview;
+use Walletapp\Components\Components\Search\Action;
+use Walletapp\Components\Components\Search\Input;
+use Walletapp\Components\Components\Search\Recent;
+use Walletapp\Components\Components\Search\Result;
+use Walletapp\Components\Components\SingleList;
+use Walletapp\Components\Components\Stat;
+use Walletapp\Components\Components\WebshopOrder;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 use Blade;
@@ -42,6 +42,14 @@ class ComponentsProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->publishes([
+            __DIR__.'/resources/' => resource_path() . '/resources/walletapp'
+        ], 'resources');
+
+        $this->publishes([
+            __DIR__.'/components/' => app_path() . '/Http/Livewire/WalletApp'
+        ], 'components');
+         
         Livewire::component('walletapp::search.action', Action::class);
         Livewire::component('walletapp::search.input', Input::class);
         Livewire::component('walletapp::search.recent', Recent::class);

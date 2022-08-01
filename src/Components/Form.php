@@ -1,6 +1,6 @@
 <?php
 
-namespace Walletapp\Components;
+namespace Walletapp\Components\Components;
 
 use Exception;
 use Illuminate\Support\Facades\Http;

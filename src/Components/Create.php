@@ -1,6 +1,6 @@
 <?php
 
-namespace Walletapp\Components;
+namespace Walletapp\Components\Components;
 
 use Illuminate\Support\Facades\Http;
 use Livewire\Component;

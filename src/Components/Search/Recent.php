@@ -1,6 +1,6 @@
 <?php
 
-namespace Walletapp\Components\Search;
+namespace Walletapp\Components\Components\Search;
 
 use Livewire\Component;
 
