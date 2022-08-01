@@ -38,7 +38,7 @@ class ComponentsProvider extends ServiceProvider
         } else {
             $this->loadViewsFrom(__DIR__.'/resources/views/walletapp', 'walletapp');
         }
-        dd(__DIR__.'/resources/views/walletapp');
+        dd(__DIR__.'/resources/views/walletapp', resource_path());
     }
 
     /**
