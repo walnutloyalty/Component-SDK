@@ -39,7 +39,7 @@ x-id="['tab']"
                 type="button"
                 :tabindex="isSelected($el.id) ? 0 : -1"
                 :aria-selected="isSelected($el.id)"
-                :class="isSelected($el.id) ? ' border-sky-500 text-sky-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 '" href="#" class="ml-4 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> {{$key ?? 'tab'}} 
+                :class="isSelected($el.id) ? ' border-sky-500 text-sky-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 '" href="#" class="ml-4 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> {{$key ?? 'tab'}}
             </button>
         </li>
         @endforeach
@@ -81,10 +81,10 @@ x-id="['tab']"
                                 </div>
                             @endif
                         </dd>
-                    </div> 
+                    </div>
 
                     @endforeach
             </section>
-        @endforeach   
+        @endforeach
     </div>
  </div>

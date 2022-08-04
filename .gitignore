@@ -1,0 +1,48 @@
+vendor/
+node_modules/
+npm-debug.log
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+# remove the sdk stuff
+
+app/Http/Livewire/Walletapp
+resources/views/walletapp
+public/css
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+storage/*.key
+storage/*
+.env.*.php
+.env.php
+.env.*
+.env
+Homestead.yaml
+Homestead.json
+
+# Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
+.rocketeer/
+
+# PHPStorm settings folder
+.idea/
+.idea/workspace.xml
+.DS_Store
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+public/js/app.js
+public/css/app.css
+rr
+.rr.yaml
+public/css/app.min.css
+public/css/app.css
+
+public/js/all.js
+!/bootstrap/
+app/Csv.php
+public/css/app.min.css
