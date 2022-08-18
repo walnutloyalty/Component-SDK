@@ -4,7 +4,7 @@
     <div class="rounded-lg bg-white overflow-hidden shadow">
         <div class="p-6">
             <h2 class="text-base font-medium text-gray-900" id="announcements-title">{{$title ?? 'Feed component'}}</h2>
-            <div style="height:32.5vh;" class="overflow-y-auto flow-root mt-6">
+            <div style="height:12.5vh;" class="overflow-y-auto flow-root mt-6">
                 <ul role="list" class="-my-5 divide-y divide-sky-200">
                     @if(count($items) > 0)
                         @foreach($items as $item)
