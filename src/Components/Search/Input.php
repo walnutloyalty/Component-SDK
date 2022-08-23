@@ -18,11 +18,13 @@ class Input extends Component
             'search' => $this->input,
             'organization_id' => auth()->user()->current_organization->id,
         ]);
-        $this->emit('user', $http['user']);
-        $this->emit('results', [
-            'coupons' => $http['coupons'],
-            'products' => $http['products'],
-        ]);
+        if(!$http->failed()) {
+            $this->emit('user', $http['user']);
+            $this->emit('results', [
+                'coupons' => $http['coupons'],
+                'products' => $http['products'],
+            ]);
+        }
     }
 
     public function render()
