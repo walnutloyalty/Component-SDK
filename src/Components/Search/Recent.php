@@ -26,6 +26,7 @@ class Recent extends Component
             'search' => $item,
             'organization_id' => auth()->user()->current_organization->id,
         ]);
+        dd($http->json(), $item);
         if(!$http->failed()) {
             $this->emit('user', $http['user']);
             $this->emit('results', [
