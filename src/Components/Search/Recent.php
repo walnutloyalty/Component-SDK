@@ -10,31 +10,13 @@ class Recent extends Component
     public $list = [];
 
     public $listeners = [
-        'recent' => 'recent',
-        'checkRecent' => 'checkRecent'
+        'recent' => 'recent'
     ];
 
     public function recent($item)
     {
         if (! in_array($item, $this->list)) {
             $this->list[] = $item;
-        }
-    }
-
-    public function checkRecent($item)
-    {
-        $this->dispatchBrowserEvent('openloader');
-        $http = Http::post(config('url.docker') . '/api/search', [
-            'search' => $item,
-            'organization_id' => auth()->user()->current_organization->id,
-        ]);
-        dd($http->json(), $item);
-        if(!$http->failed()) {
-            $this->emit('user', $http['user']);
-            $this->emit('results', [
-                'coupons' => $http['coupons'],
-                'products' => $http['products'],
-            ]);
         }
     }
 

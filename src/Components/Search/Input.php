@@ -7,8 +7,11 @@ use Livewire\Component;
 
 class Input extends Component
 {
-
     public $input;
+
+    public $listeners = [
+        'checkRecent' => 'checkRecent'
+    ];
 
     public function lookup()
     {
@@ -16,6 +19,22 @@ class Input extends Component
         $this->dispatchBrowserEvent('openloader');
         $http = Http::post(config('url.docker') . '/api/search', [
             'search' => $this->input,
+            'organization_id' => auth()->user()->current_organization->id,
+        ]);
+        if(!$http->failed()) {
+            $this->emit('user', $http['user']);
+            $this->emit('results', [
+                'coupons' => $http['coupons'],
+                'products' => $http['products'],
+            ]);
+        }
+    }
+
+    public function checkRecent($item)
+    {
+        $this->dispatchBrowserEvent('openloader');
+        $http = Http::post(config('url.docker') . '/api/search', [
+            'search' => $item,
             'organization_id' => auth()->user()->current_organization->id,
         ]);
         if(!$http->failed()) {
