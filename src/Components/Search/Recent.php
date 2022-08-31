@@ -9,7 +9,8 @@ class Recent extends Component
     public $list = [];
 
     public $listeners = [
-        'recent' => 'recent'
+        'recent' => 'recent',
+        'checkRecent' => 'checkRecent'
     ];
 
     public function recent($item)
