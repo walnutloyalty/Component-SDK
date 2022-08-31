@@ -5,7 +5,7 @@
         <!-- Active: "bg-gray-100 text-gray-900" -->
         @foreach($list as $item)
             <li class="group flex cursor-default select-none items-center rounded-md p-2" id="recent-1" role="option" tabindex="-1">
-                <button type="button" class="absolute inset-0" @click="Livewire.emit('lookup', '{{$item}}')" > </button>
+                <button type="button" class="absolute inset-0" @click="Livewire.emit('checkRecent', '{{$item}}')" > </button>
                 <span class="ml-3 flex-auto text-xs text-gray-500 truncate">- {{$item}}</span>
                 <!-- Not Active: "hidden" -->
                 <!-- Heroicon name: solid/chevron-right -->

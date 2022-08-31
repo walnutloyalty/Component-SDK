@@ -19,7 +19,7 @@ class Recent extends Component
         }
     }
 
-    public function lookup($item)
+    public function checkRecent($item)
     {
         $this->dispatchBrowserEvent('openloader');
         $http = Http::post(config('url.docker') . '/api/search', [
