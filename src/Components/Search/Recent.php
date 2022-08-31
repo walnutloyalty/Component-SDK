@@ -2,6 +2,7 @@
 
 namespace Walletapp\Components\Components\Search;
 
+use Illuminate\Support\Facades\Http;
 use Livewire\Component;
 
 class Recent extends Component
