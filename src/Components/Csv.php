@@ -57,7 +57,7 @@ class Csv extends Component
                 unset($data[$key]);
             }
         }
-        dd($data, $this->headers);
+
         // the primary headers provided to the element are not found return an error
         if (count($this->headers) == 0) {
             $this->dispatchBrowserEvent('csverror');
