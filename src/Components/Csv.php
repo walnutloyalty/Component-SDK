@@ -50,14 +50,14 @@ class Csv extends Component
         // check the import type, allows csv, xls, xlsx
         $imported = [];
         $data = Excel::toArray(new UserImport, $this->csv_import)[0];
-dd($data);
+
         foreach ($data as $key => $array) {
             if (! array_diff($this->primary_headers, $array)) {
                 $this->headers = $array;
                 unset($data[$key]);
             }
         }
-     
+        dd($data, $this->headers);
         // the primary headers provided to the element are not found return an error
         if (count($this->headers) == 0) {
             $this->dispatchBrowserEvent('csverror');
