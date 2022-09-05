@@ -10,7 +10,6 @@ use Exception;
 
 class Csv extends Component
 {
-
     use WithFileUploads;
 
     public $label; 
@@ -24,6 +23,10 @@ class Csv extends Component
     public $selected_headers = [];
 
     //general mounting function
+
+    /**
+     * @throws Exception
+     */
     public function mount()
     {
         if (count($this->primary_headers) === 0) {
@@ -47,7 +50,7 @@ class Csv extends Component
         // check the import type, allows csv, xls, xlsx
         $imported = [];
         $data = Excel::toArray(new UserImport, $this->csv_import)[0];
-
+dd($data);
         foreach ($data as $key => $array) {
             if (! array_diff($this->primary_headers, $array)) {
                 $this->headers = $array;
