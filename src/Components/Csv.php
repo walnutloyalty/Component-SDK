@@ -86,7 +86,6 @@ class Csv extends Component
         }
         
         // after parsing emit the data to the parent component
-        $this->dispatchBrowserEvent('csvdone');
         $this->emit('formData', $this->data);    
     }
 
