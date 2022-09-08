@@ -10,6 +10,20 @@ class Feed extends Component
     
     public $title;
     
+    public $mode;
+
+    public function getListeners()
+    {
+        return [
+            'setFeedData'.ucfirst($this->mode) => 'data'
+        ];
+    }
+
+    public function data($data)
+    {
+        $this->items = $data;
+    }
+
     public function render()
     {
         return view('walletapp::feed');
