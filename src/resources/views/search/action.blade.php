@@ -19,15 +19,32 @@
                 <dt class="col-end-1 font-semibold text-gray-900">Member</dt>
                 <dd class="text-xs mt-1 truncate text-sky-600">{{ $user['identifier'] ?? 'Not provided' }}</dd>
             </dl>
-            <a type="button"
-                @if (!auth()->user()->tokenCan('member_info'))
-                href="#" x-data x-tooltip="You dont have access"
+            <div class="grid grid-cols-6 gap-3">
+                <a type="button"
+                    @if (!auth()->user()->tokenCan('member_info')) href="#" x-data x-tooltip="You dont have access"
                 @else
                 x-data
                 x-tooltip="View profile"
-                href="{{ route('member.profile.page', ['uuid' => $user['identifier']]) }}" @endif
-                class="mt-6 w-full rounded-md border border-transparent bg-sky-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none text-center focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
-                <span class="mx-auto">View profile</span> </a>
+                href="{{ route('member.profile.page', ['uuid' => $user['identifier'], 'tab' => 'overview']) }}" @endif
+                    class="mt-6 w-full rounded-md border border-transparent bg-sky-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none text-center focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+                </a>
+                <a @if (!auth()->user()->tokenCan('member_info')) href="#" x-data x-tooltip="You dont have access"
+                @else
+                x-data
+                x-tooltip="View passes"
+                href="{{ route('member.profile.page', ['uuid' => $user['identifier'], 'tab' => 'rewards']) }}" @endif
+                    @click="type ='overview'" x-data="" x-tooltip="Overview" data-tippy-arrow="false"
+                    :class="type === 'overview' ? 'bg-sky-600 text-white hover:bg-sky-700' :
+                        'bg-sky-50 text-sky-700 hover:bg-blue-100'"
+                    class="rounded-lg inline-flex p-3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 bg-sky-600 text-white hover:bg-sky-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                        </path>
+                    </svg>
+                </a>
+            </div>
         </div>
     @elseif(!is_null($user))
         <div class="my-auto ">
