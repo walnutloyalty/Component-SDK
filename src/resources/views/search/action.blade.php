@@ -27,6 +27,10 @@
                 x-tooltip="View profile"
                 href="{{ route('member.profile.page', ['uuid' => $user['identifier'], 'tab' => 'overview']) }}" @endif
                     class="mt-6 w-full rounded-md border border-transparent bg-sky-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none text-center focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
+                      </svg>                      
                 </a>
                 <a @if (!auth()->user()->tokenCan('member_info')) href="#" x-data x-tooltip="You dont have access"
                 @else
@@ -37,12 +41,10 @@
                     :class="type === 'overview' ? 'bg-sky-600 text-white hover:bg-sky-700' :
                         'bg-sky-50 text-sky-700 hover:bg-blue-100'"
                     class="rounded-lg inline-flex p-3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 bg-sky-600 text-white hover:bg-sky-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                        </path>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path d="M4.5 3.75a3 3 0 00-3 3v.75h21v-.75a3 3 0 00-3-3h-15z" />
+                        <path fill-rule="evenodd" d="M22.5 9.75h-21v7.5a3 3 0 003 3h15a3 3 0 003-3v-7.5zm-18 3.75a.75.75 0 01.75-.75h6a.75.75 0 010 1.5h-6a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z" clip-rule="evenodd" />
+                      </svg>                      
                 </a>
             </div>
         </div>
