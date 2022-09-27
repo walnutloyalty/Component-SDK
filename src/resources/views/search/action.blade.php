@@ -56,7 +56,7 @@
             <p class="text-sm leading-6 text-gray-500">Seems like this search doesn't have results</p>
         </div>
         <div class="flex flex-auto flex-col justify-between p-6">
-            <button type="button" @click="$focus.focus($refs.search)" class="mt-6 w-full rounded-md border border-transparent bg-sky-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">Again</button>
+            <button type="button" x-data x-tooltip="Go to profile" @click="$focus.focus($refs.search)" class="mt-6 w-full rounded-md border border-transparent bg-sky-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">Again</button>
         </div>
     @endif
 
