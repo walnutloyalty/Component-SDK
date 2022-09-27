@@ -19,7 +19,8 @@
             <a type="button"
                @if(!auth()->user()->tokenCan('member_info'))
                    href="#"
-               x-tooltip="You dont have access"
+                   x-data
+                x-tooltip="You dont have access"
                @else
                    href="{{route('member.profile.page', ['uuid' => $user['identifier']])}}"
                @endif
@@ -43,7 +44,7 @@
                     <dt class="col-end-1 font-semibold text-gray-900">Passes</dt>
                     <dd class="text-xs mt-1 truncate text-sky-600">The associated member will be shown</dd>
                 </dl>
-                <button type="button" @click="$focus.focus($refs.search)" class="mt-6 w-full rounded-md border border-transparent bg-sky-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">Let's search!</button>
+                <button type="button" wire:click="$emit('lookup')" class="mt-6 w-full rounded-md border border-transparent bg-sky-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">Let's search!</button>
             </div>
         </div>
         <!-- Heroicon name: outline/users -->
@@ -56,7 +57,7 @@
             <p class="text-sm leading-6 text-gray-500">Seems like this search doesn't have results</p>
         </div>
         <div class="flex flex-auto flex-col justify-between p-6">
-            <button type="button" x-data x-tooltip="Go to profile" @click="$focus.focus($refs.search)" class="mt-6 w-full rounded-md border border-transparent bg-sky-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">Again</button>
+            <button type="button" wire:click="$emit('lookup')" class="mt-6 w-full rounded-md border border-transparent bg-sky-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">Again</button>
         </div>
     @endif
 

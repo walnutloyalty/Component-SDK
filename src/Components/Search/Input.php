@@ -10,7 +10,8 @@ class Input extends Component
     public $input;
 
     public $listeners = [
-        'checkRecent' => 'checkRecent'
+        'checkRecent' => 'checkRecent',
+        'lookup' => 'lookup'
     ];
 
     public function lookup()
