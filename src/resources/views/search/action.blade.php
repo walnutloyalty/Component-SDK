@@ -20,8 +20,7 @@
                 <dd class="text-xs mt-1 truncate text-sky-600">{{ $user['identifier'] ?? 'Not provided' }}</dd>
             </dl>
             <div class="grid grid-cols-6 gap-3 mt-6">
-                <a type="button"
-                    @if (!auth()->user()->tokenCan('member_info')) href="#" x-data x-tooltip="You dont have access"
+                <a @if (!auth()->user()->tokenCan('member_info')) href="#" x-data x-tooltip="You dont have access"
                 @else
                 x-data
                 x-tooltip="View profile"
