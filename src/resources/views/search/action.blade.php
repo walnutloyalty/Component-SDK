@@ -25,7 +25,7 @@
                 x-data
                 x-tooltip="View profile"
                 data-tippy-arrow="false"
-                href="{{ route('member.profile.page', ['uuid' => $user['identifier'], 'tab' => 'overview']) }}" @endif
+                href="{{ route('member.profile.page', ['uuid' => $user['identifier'], 'search_type' => $user['id'], 'tab' => 'overview']) }}" @endif
                     class="rounded-lg inline-flex p-3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 bg-sky-600 text-white hover:bg-sky-700">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                         <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
@@ -36,7 +36,7 @@
                 @else
                 x-data
                 x-tooltip="View passes"
-                href="{{ route('member.profile.page', ['uuid' => $user['identifier'], 'tab' => 'rewards']) }}" @endif
+                href="{{ route('member.profile.page', ['uuid' => $user['identifier'], 'search_type' => $user['id'], 'tab' => 'rewards']) }}" @endif
                     @click="type ='overview'" x-data="" x-tooltip="Overview" data-tippy-arrow="false"
                     class="rounded-lg inline-flex p-3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 bg-sky-600 text-white hover:bg-sky-700">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
